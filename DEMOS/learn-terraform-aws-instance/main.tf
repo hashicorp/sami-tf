@@ -16,22 +16,14 @@ provider "aws" {
 
 resource "aws_instance" "app_server" {
   ami           = "ami-830c94e3"
-  instance_type = "t2.micro"
+  instance_type = var.instance_type
 
   tags = {
-    Name = "ExampleAppServerInstance"
-  }
-}
-
-resource "aws_s3_bucket" "b" {
-  bucket = "samitest-bucket"
-  acl    = "private"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Sami"
+    Name = var.instance_name
   }
 }
 
 variable "instance_name" {}
 
+variable "instance_type {}
+ 
