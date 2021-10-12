@@ -33,4 +33,5 @@ resource "aws_s3_bucket" "b" {
   }
 }
 
+variable "instance_name" {}
 
